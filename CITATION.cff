@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Jetson Orin Nano Matrix Multiplication: Power-Performance Analysis"
+abstract: "Comprehensive CUDA benchmarking framework for NVIDIA Jetson Orin Nano evaluating power-performance trade-offs across four matrix multiplication implementations (naive, blocked, cuBLAS, Tensor Cores) and three power modes (15W, 25W, MAXN). Provides validated measurements with 99.5% accuracy and runtime GPU frequency monitoring to identify optimal configurations for edge ML deployments."
+authors:
+  - family-names: "Moses"
+    given-names: "Jesse"
+    orcid: "https://orcid.org/0009-0006-0322-7974"
+    affiliation: "ByteStack Labs"
+repository-code: "https://github.com/Cre4T3Tiv3/jetson-orin-matmul-analysis"
+url: "https://github.com/Cre4T3Tiv3/jetson-orin-matmul-analysis"
+keywords:
+  - NVIDIA Jetson
+  - power optimization
+  - CUDA
+  - matrix multiplication
+  - edge computing
+  - tensor cores
+  - performance analysis
+  - GPU computing
+  - embedded systems
+  - machine learning
+license: MIT
+version: 1.0.0
+date-released: 2025-10-13
+preferred-citation:
+  type: software
+  title: "Jetson Orin Nano Matrix Multiplication: Power-Performance Analysis"
+  authors:
+    - family-names: "Moses"
+      given-names: "Jesse"
+      orcid: "https://orcid.org/0009-0006-0322-7974"
+      affiliation: "ByteStack Labs"
+  year: 2025
+  url: "https://github.com/Cre4T3Tiv3/jetson-orin-matmul-analysis"
+  abstract: "Rigorous benchmarking framework demonstrating power-performance trade-offs in CUDA matrix multiplication on NVIDIA Jetson Orin Nano, achieving 61% of theoretical peak (1,282 GFLOPS) with cuBLAS and identifying optimal 25W power configuration that delivers 90% of maximum performance at 88% power consumption for edge ML deployments."

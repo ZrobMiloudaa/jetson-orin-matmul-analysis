@@ -1,0 +1,66 @@
+name: Validate Benchmarks
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install UV package manager
+      run: |
+        curl -LsSf https://astral.sh/uv/install.sh | sh
+        export PATH="$HOME/.cargo/bin:$PATH"
+
+    - name: Install ShellCheck
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y shellcheck
+
+    - name: Setup environment (Makefile)
+      run: |
+        export PATH="$HOME/.cargo/bin:$PATH"
+        make setup-env
+
+    - name: Validate project structure (Makefile)
+      run: |
+        export PATH="$HOME/.cargo/bin:$PATH"
+        make validate-structure
+
+    - name: Run all quality checks (Python + CUDA + Shell)
+      run: |
+        export PATH="$HOME/.cargo/bin:$PATH"
+        make check-all
+      # Note: check-all includes lint-python, lint-cuda, and lint-shell
+
+    - name: Run unit tests (Makefile)
+      run: |
+        export PATH="$HOME/.cargo/bin:$PATH"
+        make test-unit
+
+    - name: Validate benchmark data (Makefile)
+      run: |
+        export PATH="$HOME/.cargo/bin:$PATH"
+        make validate-data
+      if: hashFiles('data/raw/power_modes/*.json') != ''
+      continue-on-error: true
+
+    - name: Security check (Bandit)
+      run: |
+        export PATH="$HOME/.cargo/bin:$PATH"
+        source .venv/bin/activate
+        pip install bandit[toml]
+        bandit -r benchmarks/ data/ scripts/ -ll
+      continue-on-error: true

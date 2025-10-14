@@ -1,0 +1,97 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jetson-orin-power-benchmarks"
+version = "1.0.0"
+description = "Scientific power-performance analysis of CUDA matrix multiplication on Jetson Orin Nano"
+authors = [{name = "Jesse Moses (@Cre4T3Tiv3)", email = "jesse@bytestacklabs.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["cuda", "jetson-orin", "edge-ai", "performance-optimization", "power-efficiency", "benchmark"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "pandas>=2.0.0",
+    "matplotlib>=3.7.0", 
+    "seaborn>=0.12.0",
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "pre-commit>=3.3.0",
+    "cpplint>=1.6.0",
+    "shellcheck-py>=0.9.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Cre4T3Tiv3/jetson-orin-matmul-analysis"
+Repository = "https://github.com/Cre4T3Tiv3/jetson-orin-matmul-analysis"
+Issues = "https://github.com/Cre4T3Tiv3/jetson-orin-matmul-analysis/issues"
+Documentation = "https://github.com/Cre4T3Tiv3/jetson-orin-matmul-analysis#readme"
+
+# Ruff replaces: black, isort, flake8, bandit, pyupgrade, autoflake
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings  
+    "F",     # pyflakes
+    "I",     # isort
+    "B",     # flake8-bugbear
+    "C4",    # flake8-comprehensions
+    "UP",    # pyupgrade
+    "S",     # bandit security
+]
+ignore = [
+    "E501",  # line too long (handled by formatter)
+    "S101",  # assert usage (acceptable in tests)
+    "S603",  # subprocess without shell=True (acceptable for controlled usage)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "S106", "S108"]  # Allow asserts, hardcoded passwords in tests
+"benchmarks/*" = ["E501", "S603"]     # Allow longer lines and subprocess in benchmarks
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+exclude = [".venv", "build"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["benchmarks*", "tests*"]
+exclude = ["cuda*", "data*", "docs*", "scripts*", ".venv*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --cov=. --cov-report=term-missing"
+filterwarnings = ["ignore::DeprecationWarning"]

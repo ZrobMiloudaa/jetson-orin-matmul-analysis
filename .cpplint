@@ -1,0 +1,5 @@
+# CUDA/C++ linting configuration for CUDA files - .cpplint
+filter=-whitespace/tab,-build/include_subdir,-legal/copyright,-build/header_guard
+linelength=100
+extensions=cu,cuh,cpp,h,hpp
+exclude_files=.*\.pb\.cc$

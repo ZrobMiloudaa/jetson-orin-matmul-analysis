@@ -1,0 +1,6 @@
+elapsed_ms,gflops,memory_bandwidth,arithmetic_intensity,efficiency_percent,implementation,power_mode_id,power_mode_name,matrix_size,timestamp,wall_clock_time,pre_temperature,post_temperature,avg_power_consumption,thermal_rise,hardware_model,l4t_version,cuda_version
+0.022,23.64,2.22,10.67,1.9,blocked,0,15W,64,2025-10-09T20:23:05.192109,1.1504838466644287,52.093,51.781,23.245376,-0.3120000000000047,Jetson Orin Nano Engineering Reference Developer Kit Super,R36.4.4,V12.6.68
+0.054,78.25,3.67,21.33,6.2,blocked,0,15W,128,2025-10-09T20:23:09.989605,1.1376068592071533,51.75,51.75,19.686752,0.0,Jetson Orin Nano Engineering Reference Developer Kit Super,R36.4.4,V12.6.68
+0.342,98.19,2.3,42.67,7.8,blocked,0,15W,256,2025-10-09T20:23:14.918841,1.1904730796813965,51.812,52.406,29.666688,0.5940000000000012,Jetson Orin Nano Engineering Reference Developer Kit Super,R36.4.4,V12.6.68
+2.45,109.58,1.28,85.33,8.7,blocked,0,15W,512,2025-10-09T20:23:20.694854,1.5568749904632568,52.187,52.187,22.019264,0.0,Jetson Orin Nano Engineering Reference Developer Kit Super,R36.4.4,V12.6.68
+22.963,93.52,0.55,170.67,7.5,blocked,0,15W,1024,2025-10-09T20:23:35.268118,5.752905607223511,52.187,52.406,23.503136,0.2190000000000012,Jetson Orin Nano Engineering Reference Developer Kit Super,R36.4.4,V12.6.68

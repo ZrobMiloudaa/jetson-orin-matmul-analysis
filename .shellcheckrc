@@ -1,0 +1,5 @@
+# Shell script configuration - .shellcheckrc
+disable=SC1091  # Allow sourcing files that may not exist during linting
+disable=SC2034  # Allow unused variables (common in configuration scripts)
+shell=bash
+enable=all
